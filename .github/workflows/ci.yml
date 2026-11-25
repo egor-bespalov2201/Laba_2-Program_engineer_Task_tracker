@@ -1,0 +1,23 @@
+name: CI Task Tracker
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show Python version
+        run: py --version
+
+      - name: Run unit tests
+        run: py -m unittest discover -v
+
+      - name: Launch project in demo mode
+        run: py main.py
