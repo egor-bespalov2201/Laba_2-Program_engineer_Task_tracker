@@ -20,4 +20,6 @@ jobs:
         run: py -m unittest discover -v
 
       - name: Launch project in demo mode
-        run: py main.py
+        run: |
+          chcp 65001
+          py main.py
