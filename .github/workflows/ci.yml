@@ -17,7 +17,7 @@ jobs:
         run: py --version
 
       - name: Run unit tests
-        run: py -m unittest discover -v
+        run: py -m unittest discover -v -s
 
       - name: Launch project in demo mode
         run: |
